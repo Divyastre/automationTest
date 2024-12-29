@@ -1,0 +1,34 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
+
+driver = webdriver.Chrome()
+#open the browser
+driver.get("https://letshyphen.com")
+time.sleep(2)
+#maximise the window
+driver.maximize_window()
+time.sleep(3)
+#search the product using the shop icon given in th home tab
+driver.find_element(By.XPATH,"//span[normalize-space()='Shop']").click()
+time.sleep(4)
+#in the below drop down menu select face cleanse
+driver.find_element(By.XPATH,"//a[normalize-space()='Face cleanser']").click()
+time.sleep(4)
+#click on th 1st image 
+driver.find_element(By.XPATH,"//a[@id='CardLink-template--22956784648508__product-grid-9100281119036']").click()
+time.sleep(4)
+#add to cart
+driver.find_element(By.XPATH,"//button[@id='ProductSubmitButton-template--22956785533244__main']").click()
+time.sleep(4)
+#to add the items
+driver.find_element(By.XPATH,"//button[@name='plus']").click()
+time.sleep(4)
+#to remove the items
+driver.find_element(By.XPATH,"//button[@name='minus']").click()
+time.sleep(4)
+#to place the order
+driver.find_element(By.XPATH,"//button[@class='button']").click()
+time.sleep(4)
